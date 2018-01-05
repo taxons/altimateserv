@@ -12,28 +12,31 @@ import javax.ws.rs.core.Response;
 import org.springframework.stereotype.Component;
 
 import com.altimetrik.mate.model.Candidate;
+import com.fasterxml.jackson.core.JsonProcessingException;
 
 /**
  * TODO: Describe purpose and behavior of CandidateDetails
  */
 @Path("/candidate")
-@Consumes(
-{ "application/json" })
-@Produces(
-{ "application/json" })
+@Consumes({ "application/json" })
+@Produces({ "application/json" })
 public interface CandidateDetails {
 
-    @POST
-    @Path("/add")
-    public Response add(Candidate c);
+	@POST
+	@Path("/add")
+	public Response add(Candidate c);
 
-    @GET
-    @Path("/search")
-    public Response search(@QueryParam("email") String email, @QueryParam("phone") String phone,
-            @QueryParam("id") String id);
+	@GET
+	@Path("/search")
+	public Response search(@QueryParam("email") String email, @QueryParam("phone") String phone,
+			@QueryParam("id") String id) throws JsonProcessingException;
 
-    @GET
-    @Path("/add/{id}")
-    public Response get(@PathParam("id") String id);
+	@GET
+	@Path("/get")
+	public Response get(@QueryParam("id") String id) throws JsonProcessingException;
+
+	@GET
+	@Path("/getAll")
+	public Response getAll() throws JsonProcessingException;
 
 }

@@ -12,6 +12,12 @@ public class Experience {
     
     @JsonProperty("month")
     private int month;
+    
+    public Experience(int year, int month) {
+        super();
+        this.year = year;
+        this.month = month;
+    }
 
     public int getYear() {
         return year;
