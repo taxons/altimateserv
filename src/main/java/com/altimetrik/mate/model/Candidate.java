@@ -7,7 +7,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  */
 public class Candidate {
     
-       
+    @JsonProperty("id")
+    private long id;
+      
     @JsonProperty("name")
     private String name;
     
@@ -22,6 +24,15 @@ public class Candidate {
 
     @JsonProperty("phone")
     private String phone;
+
+    
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
 
     public String getName() {
         return name;
