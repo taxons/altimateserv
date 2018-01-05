@@ -12,6 +12,7 @@ import javax.ws.rs.core.Response;
 import org.springframework.stereotype.Component;
 
 import com.altimetrik.mate.model.Candidate;
+import com.fasterxml.jackson.core.JsonProcessingException;
 
 /**
  * TODO: Describe purpose and behavior of CandidateDetails
@@ -33,7 +34,7 @@ public interface CandidateDetails {
             @QueryParam("id") String id);
 
     @GET
-    @Path("/add/{id}")
-    public Response get(@PathParam("id") String id);
+    @Path("/get")
+    public Response get(@QueryParam("id") String id) throws JsonProcessingException;
 
 }
