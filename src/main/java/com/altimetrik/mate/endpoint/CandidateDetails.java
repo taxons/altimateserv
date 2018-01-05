@@ -31,7 +31,7 @@ public interface CandidateDetails {
     @GET
     @Path("/search")
     public Response search(@QueryParam("email") String email, @QueryParam("phone") String phone,
-            @QueryParam("id") String id);
+            @QueryParam("id") String id) throws JsonProcessingException;
 
     @GET
     @Path("/get")

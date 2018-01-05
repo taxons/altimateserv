@@ -36,9 +36,15 @@ public class CandidateDetailsImpl implements CandidateDetails {
     }
 
     @Override
-    public Response search(String email, String phone, String id) {
-        
-        return null;
+    public Response search(String email, String phone, String id) throws JsonProcessingException {
+        for(Candidate candidate:listCandidate) {
+            if(email.equals(candidate.getEmail())) {
+                ObjectMapper mapper = new ObjectMapper();
+                String jsonInString = mapper.writeValueAsString(candidate);
+                return Response.ok(jsonInString).build();
+            }
+        }
+        return Response.status(404).build();
     }
 
     @Override
