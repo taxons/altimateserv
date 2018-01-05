@@ -37,4 +37,8 @@ public interface CandidateDetails {
     @Path("/get")
     public Response get(@QueryParam("id") String id) throws JsonProcessingException;
 
+    @GET
+    @Path("/getAll")
+    public Response getAll() throws JsonProcessingException;
+
 }

@@ -59,4 +59,17 @@ public class CandidateDetailsImpl implements CandidateDetails {
         return Response.status(404).build();
     }
 
+    @Override
+    public Response getAll() throws JsonProcessingException {
+        List<String> getAllCandidate=new ArrayList<>();
+        for(Candidate candidate:listCandidate) {
+            ObjectMapper mapper = new ObjectMapper();
+            String jsonInString = mapper.writeValueAsString(candidate);
+            getAllCandidate.add(jsonInString);
+        }
+        return Response.ok(getAllCandidate).build();
+    }
+
+   
+
 }
