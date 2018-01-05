@@ -5,6 +5,8 @@ import java.util.List;
 
 import javax.ws.rs.core.Response;
 
+import org.springframework.stereotype.Component;
+
 import com.altimetrik.mate.endpoint.CandidateDetails;
 import com.altimetrik.mate.model.Candidate;
 import com.altimetrik.mate.model.Link;
@@ -12,6 +14,7 @@ import com.altimetrik.mate.model.Link;
 /**
  * TODO: Describe purpose and behavior of CandidateDetailsImpl
  */
+@Component
 public class CandidateDetailsImpl implements CandidateDetails {
     
     public static final String ALTI_API_PREFIX = "/v1/manage/";
