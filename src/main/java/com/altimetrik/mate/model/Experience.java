@@ -13,8 +13,10 @@ public class Experience {
     @JsonProperty("month")
     private int month;
     
+    public Experience() {
+    }
+    
     public Experience(int years, int month) {
-        super();
         this.years = years;
         this.month = month;
     }
@@ -23,7 +25,7 @@ public class Experience {
         return years;
     }
 
-    public void setYear(int years) {
+    public void setYears(int years) {
         this.years = years;
     }
 
