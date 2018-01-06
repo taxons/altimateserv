@@ -7,24 +7,24 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  */
 public class Experience {
     
-    @JsonProperty("year")
-    private int year;
+    @JsonProperty("years")
+    private int years;
     
     @JsonProperty("month")
     private int month;
     
-    public Experience(int year, int month) {
+    public Experience(int years, int month) {
         super();
-        this.year = year;
+        this.years = years;
         this.month = month;
     }
 
-    public int getYear() {
-        return year;
+    public int getYears() {
+        return years;
     }
 
-    public void setYear(int year) {
-        this.year = year;
+    public void setYear(int years) {
+        this.years = years;
     }
 
     public int getMonth() {
